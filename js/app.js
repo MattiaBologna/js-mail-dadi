@@ -12,9 +12,20 @@ const mailSumbitDOMElement = document.getElementById('mail--submit');
 // assegna il contenuto della mail a una costante
 mailSumbitDOMElement.addEventListener('click', function() {
     const userMail = mailDOMElement.value;
-    console.log(userMail)
+    
+    // definisci un array di mail di chi puo accedere 
+    // definisci l'elemento dell'Array
+    const validUsersMailList = ["pippo@gmail.com", "pluto@gmail.com", "paperino@gmail.com"]
+    
+    // controlla se la mail e presente nell'array delle mail 
+    for (i=0; i < validUsersMailList.length; i++) {
+        // assegna ciascuna mail ad una variabile per poterle confrontare con la mail dell'user
+        let validUsersMail = validUsersMailList[i]
+
+        if (userMail === validUsersMail) {
+            console.log('valid mail')
+        } 
+    } 
+    
+    
 })
-
-// Definisci un array di mail di chi puo accedere 
-const usersMailList = ["pippo@gmail.com", "pluto@gmail.com", "paperino@gmail.com"]
-
