@@ -16,6 +16,8 @@ mailSumbitDOMElement.addEventListener('click', function() {
     // definisci un array di mail di chi puo accedere 
     // definisci l'elemento dell'Array
     const validUsersMailList = ["pippo@gmail.com", "pluto@gmail.com", "paperino@gmail.com"]
+
+    let mailIsValid = false;
     
     // controlla se la mail e presente nell'array delle mail 
     for (i=0; i < validUsersMailList.length; i++) {
@@ -24,13 +26,20 @@ mailSumbitDOMElement.addEventListener('click', function() {
 
         if (userMail === validUsersMail) {
             // mostra a schermo il messaggio per la mail valida 
+            mailIsValid = true;
             const mailMessage = document.createElement('p');
             mailMessage.innerHTML = 'The mail is valid';
             const mailSectionDOMElement = document.querySelector('.mail');
             mailSectionDOMElement.append(mailMessage);
         } 
-        // TODO aggiungere messaggio per mail non valida 
     } 
+
+    if (mailIsValid == false) {
+        const mailMessage = document.createElement('p');
+        mailMessage.innerHTML = 'The mail is not valid';
+        const mailSectionDOMElement = document.querySelector('.mail');
+        mailSectionDOMElement.append(mailMessage);
+    }
 })
 
 
@@ -72,5 +81,5 @@ diceRollerDOMElement.addEventListener('click', function() {
         result.innerHTML = "Sconfitta"
     }
 
-    
+
 })
