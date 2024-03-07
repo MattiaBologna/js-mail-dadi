@@ -23,7 +23,11 @@ mailSumbitDOMElement.addEventListener('click', function() {
         let validUsersMail = validUsersMailList[i]
 
         if (userMail === validUsersMail) {
-            console.log('valid mail')
+            // mostra a schermo il messaggio per la mail valida 
+            const mailMessage = document.createElement('p')
+            mailMessage.innerHTML = 'The mail is valid'
+            const mailSectionDOMElement = document.querySelector('.mail')
+            mailSectionDOMElement.append(mailMessage)
         } 
     } 
     
